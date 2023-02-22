@@ -19,7 +19,7 @@
         "laravel/breeze": "^1.19",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
-        "laravel/telescope": "^4.13",
+        "laravel/telescope": "*",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.4",
         "nunomaduro/larastan": "^2.0",
@@ -59,7 +59,6 @@
     "extra": {
         "laravel": {
             "dont-discover": [
-                "laravel/telescope"
             ]
         }
     },
