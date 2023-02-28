@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Exports\UserExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -53,5 +55,10 @@ class UserController extends Controller
         $user->delete();
 
         return response('deletado');
+    }
+
+    public function exportUsers()
+    {
+        return Excel::download(new UserExport, 'users.xlsx');
     }
 }

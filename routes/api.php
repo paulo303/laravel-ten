@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('/v1')->group(function () {
-    route::apiResource('/users', \App\Http\Controllers\Api\V1\UserController::class);
-    route::apiResource('/labels', \App\Http\Controllers\Api\V1\LabelController::class);
+    route::apiResource('/users', UserController::class);
+    route::apiResource('/labels', LabelController::class);
+
+    Route::post('/users/export', [\App\Http\Controllers\Api\V1\UserController::class, 'exportUsers'])->name('export-users');
 });
