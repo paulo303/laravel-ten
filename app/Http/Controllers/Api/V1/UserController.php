@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -24,6 +24,7 @@ class UserController extends Controller
         Log::error("error");
         Log::info("info");
         Log::notice("notice");
+
         return response(User::all());
     }
 
