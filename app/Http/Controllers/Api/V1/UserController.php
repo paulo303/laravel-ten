@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -16,6 +17,13 @@ class UserController extends Controller
      */
     public function index(): Response
     {
+        Log::alert("alert");
+        Log::critical("critical");
+        Log::debug("debug");
+        Log::emergency("emergency");
+        Log::error("error");
+        Log::info("info");
+        Log::notice("notice");
         return response(User::all());
     }
 
