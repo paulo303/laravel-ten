@@ -17,16 +17,16 @@ class UserController extends Controller
      */
     public function index(): Response
     {
-        // Log::alert("Atenção: obrigado pela atenção", [
-        //     'class' => self::class,
-        //     'name'  => 'Paulo', 'email' => 'maie@maie.com'
-        // ]);
-        // Log::critical("critical");
-        // Log::debug("debug");
-        // Log::emergency("emergency");
-        // Log::error("error");
-        // Log::info("info");
-        // Log::notice("notice");
+        Log::alert("Atenção: obrigado pela atenção", [
+            'class' => self::class,
+            'name'  => 'Paulo', 'email' => 'maie@maie.com'
+        ]);
+        Log::critical("critical");
+        Log::debug("debug");
+        Log::emergency("emergency");
+        Log::error("error");
+        Log::info("info");
+        Log::notice("notice");
 
         return response(User::all());
     }
